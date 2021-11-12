@@ -1,0 +1,19 @@
+<table id="teamListId" class="table table-striped table-bordered"> 
+    <thead>
+        <tr>
+            <th>Team name</th>
+            <th>Team manager</th>
+            <th>Uci division</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of teams">
+            <td>{{team.teamName}}</td>
+            <td>{{team.teamManager}}</td>
+            <td>{{team.uciDivision}}</td>
+            <td>{{team.countryName}}</td>
+        </tr>
+    </tbody>
+
+</table>
