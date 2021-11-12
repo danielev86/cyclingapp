@@ -26,4 +26,11 @@ export class TeamService {
     ];
     return divisionList;
   }
+
+  addTeam(teamName:string, teamManager:string, uciDivsion:string, countryName:string){
+    let team:Team = new Team(0,teamName,teamManager,uciDivsion,countryName );
+    console.log(team.teamName);
+    console.log(team.teamManager);
+    console.log(team.countryName);
+  }
 }

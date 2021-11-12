@@ -1,0 +1,39 @@
+<app-jumbotron [title]="'Add Team'" [subtitle]="'Add new team'" [showLoginBtn]="false"></app-jumbotron>
+<div class="container">
+    <div class="row pb-4">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+                <label for="teamNameField">Team Name:</label>
+                <input id="teamNameFieldId"  class="form-control" type="text" name="teamNameField" [(ngModel)]="teamNameField">
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+                <label for="teamManagerField">Team Manager:</label>
+                <input id="teamManagerFieldId" class="form-control" type="text" name="teamManagerField" [(ngModel)]="teamManagerField">
+            </div>
+        </div>    
+    </div>
+    <div class="row pb-4">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 form-group">
+            <label for="country">Country:</label>
+            <select class="form-select" [(ngModel)]="countryName">
+              <option value="">Select All Countries</option>
+              <option *ngFor="let item of countries" [value]="item.countryName">{{item.countryName}}</option>
+            </select> 
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 form-group">
+            <label for="divisionNameField">Division:</label>
+            <select class="form-select" [(ngModel)]="uciDivision">
+              <option value="">Select All Division</option>
+              <option *ngFor="let item of divisions" [value]="item.divisionName">{{item.divisionName}}</option>
+            </select> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button (click)="addTeam()" class="btn btn-primary float-end">Add team</button>
+        </div>
+    </div>
+</div>
+

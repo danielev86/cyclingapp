@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ListTeamComponent } from './list-team/list-team.component';
 import { ListTeamPageComponent } from './list-team-page/list-team-page.component';
+import { TeamInsertComponent } from './team-insert/team-insert.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ListTeamPageComponent } from './list-team-page/list-team-page.component
     JumbotronComponent,
     HomeComponent,
     ListTeamComponent,
-    ListTeamPageComponent
+    ListTeamPageComponent,
+    TeamInsertComponent
   ],
   imports: [
     BrowserModule,
