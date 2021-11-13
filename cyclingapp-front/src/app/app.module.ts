@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ListTeamComponent } from './list-team/list-team.component';
 import { ListTeamPageComponent } from './list-team-page/list-team-page.component';
 import { TeamInsertComponent } from './team-insert/team-insert.component';
+import { CyclistListComponent } from './cyclist-list/cyclist-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TeamInsertComponent } from './team-insert/team-insert.component';
     HomeComponent,
     ListTeamComponent,
     ListTeamPageComponent,
-    TeamInsertComponent
+    TeamInsertComponent,
+    CyclistListComponent
   ],
   imports: [
     BrowserModule,
