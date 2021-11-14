@@ -14,7 +14,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" routerLink="/cyclists"><i class="bi bi-person-fill"></i> Search Cyclist</a></li>
-                    <li><a class="dropdown-item" routerLink="/product-insert"><i class="bi bi-person-plus-fill"></i> Add Cyclist</a></li>
+                    <li *ngIf="loginService.isLogged()"><a class="dropdown-item" routerLink="/product-insert"><i class="bi bi-person-plus-fill"></i> Add Cyclist</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -23,7 +23,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" routerLink="/teams"><i class="bi bi-binoculars-fill"></i> Search Team</a></li>
-                    <li><a class="dropdown-item" routerLink="/team-insert"><i class="bi bi-plus-circle-fill"></i> Add Team</a></li>
+                    <li *ngIf="loginService.isLogged()"><a class="dropdown-item" routerLink="/team-insert"><i class="bi bi-plus-circle-fill"></i> Add Team</a></li>
                 </ul>
             </li>
             <li class="nav-item">

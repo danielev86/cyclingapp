@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { CyclistListComponent } from './cyclist-list/cyclist-list.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import { TeamInsertComponent } from './team-insert/team-insert.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'login', component:LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'teams', component: ListTeamPageComponent},
   {path: 'team-insert', component:TeamInsertComponent},
