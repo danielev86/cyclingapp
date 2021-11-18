@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-jumbotron',
@@ -11,7 +12,7 @@ export class JumbotronComponent implements OnInit {
   @Input() subtitle:string = '';
   @Input() showLoginBtn:boolean = true;
 
-  constructor() { }
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
   }

@@ -7,17 +7,13 @@ export class LoginService {
 
   constructor() { }
 
-  authenticate(username:string, password:string):boolean{
-    let isLogged:boolean = false;
-    //TODO Authentication
+  authenticate(username:string, password:string){
     if (username==='hsimpsons' && password==='homer1986'){
       sessionStorage.setItem('user', username);
-      isLogged = true;
+      return true;
     }else{
-      isLogged = false;
+      return false;
     }
-
-    return isLogged;
   }
 
   loggedUser(){
@@ -26,7 +22,11 @@ export class LoginService {
           : '';
   }
 
-  isLogged(){
+  isLogged():boolean{
     return sessionStorage.getItem('user') != null ? true : false;
+  }
+
+  logout(){
+    sessionStorage.clear();
   }
 }
