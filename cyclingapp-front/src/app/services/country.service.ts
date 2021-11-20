@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Country } from '../model/Country';
 
@@ -6,15 +7,9 @@ import { Country } from '../model/Country';
 })
 export class CountryService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
-  getAllCountries():Country[]{
-    let countries:Country[] =
-    [
-      new Country(1,'Italy'),
-      new Country(2,'France'),
-      new Country(3,'Spain')
-    ];
-    return countries;
+  getAllCountries(){
+    return this.httpClient.get<Country[]>("http://localhost:8090/api/country/countries");
   }
 }

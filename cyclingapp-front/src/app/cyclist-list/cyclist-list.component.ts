@@ -21,7 +21,15 @@ export class CyclistListComponent implements OnInit {
   constructor(private countryService:CountryService, private teamService:TeamService) { }
 
   ngOnInit(): void {
-    this.countries = this.countryService.getAllCountries();
+    this.countryService.getAllCountries().subscribe(
+      response => {
+        console.log(response);
+        this.countries = response;
+      }, 
+      error => {
+        console.log(error.error.message);
+      }
+    )
     this.divisions = this.teamService.getDivisions();
   }
 

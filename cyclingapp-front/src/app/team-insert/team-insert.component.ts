@@ -21,7 +21,11 @@ export class TeamInsertComponent implements OnInit {
   constructor(private countryService:CountryService, private teamService:TeamService) { }
 
   ngOnInit(): void {
-    this.countries = this.countryService.getAllCountries();
+    this.countryService.getAllCountries().subscribe(
+      response =>{
+        this.countries = response;
+      }
+    )
     this.divisions = this.teamService.getDivisions();
   }
 
