@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+   mysql:
+      image: mysql:8.0
+      volumes: 
+         - /home/cyclingappdb/docker/data/db:/var/mysql/lib
+      ports:
+         - "3306:3306"
+      environment:
+         MYSQL_ROOT_PASSWORD: giuggiolone
+         MYSQL_DATABASE: dbdata
+   phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      ports:
+         - "3307:80"
+      depends_on: 
+         - mysql
+      environment:
+         PMA_HOST: mysql
+         PMA_USER: root
+         PMA_PASSWORD: giuggiolone   
+         
