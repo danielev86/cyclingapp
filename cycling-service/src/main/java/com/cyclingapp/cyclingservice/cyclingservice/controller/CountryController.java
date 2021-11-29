@@ -4,6 +4,8 @@ import static org.springframework.http.HttpStatus.OK;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,11 +21,14 @@ import com.cyclingapp.cyclingservice.cyclingservice.service.CountryService;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CountryController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(CountryController.class);
+	
 	@Autowired
 	private CountryService countryService;
 	
 	@GetMapping(value = "/")
 	public ResponseEntity<List<CountryDTO>> getAllCountries(){
+		logger.info("Call /api/country/ rest service");
 		List<CountryDTO> countries = countryService.getAllCountries();
 		return new ResponseEntity<List<CountryDTO>>(countries, OK);
 	}

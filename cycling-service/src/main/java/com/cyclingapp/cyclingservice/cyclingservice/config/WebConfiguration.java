@@ -5,6 +5,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.cyclingapp.cyclingservice.cyclingservice.converter.CountryDTOConverter;
+import com.cyclingapp.cyclingservice.cyclingservice.converter.DivisionDTOConverter;
 
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
@@ -12,5 +13,6 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
     	registry.addConverter(new CountryDTOConverter());
+    	registry.addConverter(new DivisionDTOConverter());
     }
 }
