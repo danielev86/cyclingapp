@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.controller;
+package com.cyclingapp.cyclingservice.controller;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.DivisionDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.service.DivisionService;
+import com.cyclingapp.cyclingservice.dto.DivisionDTO;
+import com.cyclingapp.cyclingservice.service.DivisionService;
 
 @Controller
 @RequestMapping(value = "/api/division")

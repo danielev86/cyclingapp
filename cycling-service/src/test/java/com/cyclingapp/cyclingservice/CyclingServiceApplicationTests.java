@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice;
+package com.cyclingapp.cyclingservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

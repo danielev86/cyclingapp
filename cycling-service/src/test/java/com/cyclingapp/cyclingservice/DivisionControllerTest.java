@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice;
+package com.cyclingapp.cyclingservice;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

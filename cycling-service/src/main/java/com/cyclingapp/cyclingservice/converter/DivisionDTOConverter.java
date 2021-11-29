@@ -1,9 +1,9 @@
-package com.cyclingapp.cyclingservice.cyclingservice.converter;
+package com.cyclingapp.cyclingservice.converter;
 
 import org.springframework.core.convert.converter.Converter;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.DivisionDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Division;
+import com.cyclingapp.cyclingservice.dto.DivisionDTO;
+import com.cyclingapp.cyclingservice.repository.model.Division;
 
 public class DivisionDTOConverter implements Converter<Division, DivisionDTO>{
 

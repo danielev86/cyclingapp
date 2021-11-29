@@ -1,11 +1,11 @@
-package com.cyclingapp.cyclingservice.cyclingservice.repository;
+package com.cyclingapp.cyclingservice.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Division;
+import com.cyclingapp.cyclingservice.repository.model.Division;
 
 public interface IDivisionRepository extends JpaRepository<Division, Long>{
 	

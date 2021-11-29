@@ -1,9 +1,9 @@
-package com.cyclingapp.cyclingservice.cyclingservice.converter;
+package com.cyclingapp.cyclingservice.converter;
 
 import org.springframework.core.convert.converter.Converter;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.CountryDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Country;
+import com.cyclingapp.cyclingservice.dto.CountryDTO;
+import com.cyclingapp.cyclingservice.repository.model.Country;
 
 public class CountryDTOConverter implements Converter<Country, CountryDTO>{
 

@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.service;
+package com.cyclingapp.cyclingservice.service;
 
 import static org.springframework.core.convert.TypeDescriptor.collection;
 import static org.springframework.core.convert.TypeDescriptor.valueOf;
@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.CountryDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.ICountryRepository;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Country;
+import com.cyclingapp.cyclingservice.dto.CountryDTO;
+import com.cyclingapp.cyclingservice.repository.ICountryRepository;
+import com.cyclingapp.cyclingservice.repository.model.Country;
 
 @Service
 public class CountryService {

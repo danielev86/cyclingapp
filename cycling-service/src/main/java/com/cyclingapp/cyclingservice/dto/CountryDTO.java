@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.dto;
+package com.cyclingapp.cyclingservice.dto;
 
 import java.io.Serializable;
 import java.util.Objects;

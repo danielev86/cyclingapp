@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.controller;
+package com.cyclingapp.cyclingservice.controller;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.CountryDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.service.CountryService;
+import com.cyclingapp.cyclingservice.dto.CountryDTO;
+import com.cyclingapp.cyclingservice.service.CountryService;
 
 @Controller
 @RequestMapping("/api/country")

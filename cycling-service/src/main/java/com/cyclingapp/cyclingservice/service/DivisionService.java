@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.service;
+package com.cyclingapp.cyclingservice.service;
 
 import static org.springframework.core.convert.TypeDescriptor.collection;
 import static org.springframework.core.convert.TypeDescriptor.valueOf;
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
-import com.cyclingapp.cyclingservice.cyclingservice.dto.DivisionDTO;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.IDivisionRepository;
-import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Division;
+import com.cyclingapp.cyclingservice.dto.DivisionDTO;
+import com.cyclingapp.cyclingservice.repository.IDivisionRepository;
+import com.cyclingapp.cyclingservice.repository.model.Division;
 
 @Service
 public class DivisionService {

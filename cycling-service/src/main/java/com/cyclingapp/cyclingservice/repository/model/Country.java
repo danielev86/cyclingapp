@@ -1,4 +1,4 @@
-package com.cyclingapp.cyclingservice.cyclingservice.repository.model;
+package com.cyclingapp.cyclingservice.repository.model;
 
 import java.io.Serializable;
 
