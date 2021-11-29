@@ -13,6 +13,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 import com.cyclingapp.cyclingservice.cyclingservice.dto.CountryDTO;
+import com.cyclingapp.cyclingservice.cyclingservice.repository.ICountryRepository;
 import com.cyclingapp.cyclingservice.cyclingservice.repository.model.Country;
 
 @Service
@@ -23,31 +24,20 @@ public class CountryService {
 	@Autowired
 	private ConversionService converter;
 	
+	@Autowired
+	private ICountryRepository countryRepository;
+	
 	@SuppressWarnings("unchecked")
 	public List<CountryDTO> getAllCountries(){
 		logger.info("Retrieve all country");
+		List<Country> countryList = countryRepository.findAll();
 		List<CountryDTO> countries = (List<CountryDTO>) converter
-				.convert(getMockCountries()
+				.convert(countryList
 						, collection(List.class, valueOf(Country.class))
 						, collection(List.class, valueOf(CountryDTO.class)));
 		logger.debug("Retrieved countries: {}", countries);
 		return countries;
 	}
 	
-	private List<Country> getMockCountries(){
-		List<Country> countries = new ArrayList<Country>();
-		countries.add(buildCountry(1L, "ITA", "Italy"));
-		countries.add(buildCountry(2L, "GER", "Germany"));
-		countries.add(buildCountry(3L, "FRA", "France"));
-		return countries;
-	}
-	
-	private Country buildCountry(Long id, String countryCode, String countryName) {
-		Country country = new Country();
-		country.setId(id);
-		country.setCountryCode(countryCode);
-		country.setCountryName(countryName);
-		return country;
-	}
 
 }
