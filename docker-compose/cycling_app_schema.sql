@@ -2,6 +2,7 @@ create table if not exists countries (
  	id BIGINT UNIQUE AUTO_INCREMENT,
     country_code VARCHAR(8) NOT NULL,
     country_name VARCHAR(80) NOT NULL,
+    code VARCHAR(8) NOT NULL,
     PRIMARY KEY (id)
 )
 
