@@ -3,6 +3,7 @@ import { Country } from '../model/Country';
 import { Division } from '../model/Division';
 import { Team } from '../model/Team';
 import { CountryService} from '../services/country.service';
+import { DivisionService } from '../services/division.service';
 import { TeamService } from '../services/team.service';
 @Component({
   selector: 'app-list-team-page',
@@ -19,7 +20,9 @@ export class ListTeamPageComponent implements OnInit {
   divisionNameField:string='';
 
 
-  constructor(private countryService:CountryService, private teamService:TeamService) { }
+  constructor(private countryService:CountryService, 
+    private divisionService:DivisionService,
+    private teamService:TeamService) { }
 
   ngOnInit(): void {
     this.countryService.getAllCountries()
@@ -29,7 +32,13 @@ export class ListTeamPageComponent implements OnInit {
           this.countries = response;
         }
       )
-    this.divisions = this.teamService.getDivisions();
+    this.divisionService.getAllDivisions()
+        .subscribe(
+          response => {
+            console.log(response);
+            this.divisions = response;
+          }
+        )
     this.teams = this.teamService.getTeams(this.teamNameField, this.countryNameField, this.divisionNameField);
   }
 

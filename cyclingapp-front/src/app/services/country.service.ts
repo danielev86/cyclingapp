@@ -10,6 +10,6 @@ export class CountryService {
   constructor(private httpClient:HttpClient) { }
 
   getAllCountries(){
-    return this.httpClient.get<Country[]>("http://localhost:8090/api/country/countries");
+    return this.httpClient.get<Country[]>("http://localhost:8090/api/country/");
   }
 }
