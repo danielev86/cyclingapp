@@ -4,3 +4,4 @@ cyclingapp-backend/coutrymicrosevice/.mvn/
 cyclingapp-backend/coutrymicrosevice/.mvn/
 country-microservice/.mvn/
 country-microservice/.gitignore
+docker-compose/.project
