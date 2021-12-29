@@ -1,12 +1,18 @@
 package com.cyclingapp.cyclingservice.repository.model;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
+import static javax.persistence.GenerationType.AUTO;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +22,7 @@ public class Country implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = AUTO)
 	@Column(name = "id", nullable = false)
 	private Long id;
 
@@ -25,6 +31,9 @@ public class Country implements Serializable {
 
 	@Column(name = "country_name", nullable = false)
 	private String countryName;
+	
+	@OneToMany(fetch = LAZY, cascade = ALL)
+	private List<Cyclist> cyclists = new ArrayList<Cyclist>();
 
 	public Long getId() {
 		return id;
@@ -48,6 +57,11 @@ public class Country implements Serializable {
 
 	public void setCountryName(String countryName) {
 		this.countryName = countryName;
+	}
+
+	@Override
+	public String toString() {
+		return "Country [id=" + id + ", countryCode=" + countryCode + ", countryName=" + countryName + "]";
 	}
 
 }

@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cyclingapp.cyclingservice.dto.CountryDTO;
@@ -31,6 +32,12 @@ public class CountryController {
 		logger.info("Call /api/country/ rest service");
 		List<CountryDTO> countries = countryService.getAllCountries();
 		return new ResponseEntity<List<CountryDTO>>(countries, OK);
+	}
+	
+	@GetMapping("/{countryName}")
+	public ResponseEntity<CountryDTO> getCountryByName(@PathVariable("countryName") String countryName){
+		CountryDTO country = countryService.getCountryByName(countryName);
+		return new ResponseEntity<CountryDTO>(country, OK);
 	}
 
 }

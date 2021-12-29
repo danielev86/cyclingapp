@@ -3,7 +3,6 @@ package com.cyclingapp.cyclingservice.service;
 import static org.springframework.core.convert.TypeDescriptor.collection;
 import static org.springframework.core.convert.TypeDescriptor.valueOf;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -39,5 +38,10 @@ public class CountryService {
 		return countries;
 	}
 	
+	public CountryDTO getCountryByName(String countryName) {
+		Country country = countryRepository.findCountryByName(countryName);
+		CountryDTO countryDTO = converter.convert(country, CountryDTO.class);
+		return countryDTO;
+	}
 
 }

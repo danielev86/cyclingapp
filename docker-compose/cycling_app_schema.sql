@@ -12,3 +12,13 @@ create table if not exists divisions(
     position BIGINT NOT NULL,
     PRIMARY KEY(id)
 )
+
+create table if not exists cyclists(
+  	id   BIGINT AUTO_INCREMENT UNIQUE,
+    first_name VARCHAR(80) NOT NULL,
+    last_name VARCHAR(80) NOT NULL,
+    BORN DATE NOT NULL,
+    country_id BIGINT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (country_id) REFERENCES countries(id)    
+);
