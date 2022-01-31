@@ -12,6 +12,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 import com.cyclingapp.cyclingservice.dto.CountryDTO;
+import com.cyclingapp.cyclingservice.exceptions.NotFoundException;
 import com.cyclingapp.cyclingservice.repository.ICountryRepository;
 import com.cyclingapp.cyclingservice.repository.model.Country;
 
@@ -38,9 +39,15 @@ public class CountryService {
 		return countries;
 	}
 	
-	public CountryDTO getCountryByName(String countryName) {
+	public CountryDTO getCountryByName(String countryName) throws NotFoundException{
 		Country country = countryRepository.findCountryByName(countryName);
-		CountryDTO countryDTO = converter.convert(country, CountryDTO.class);
+		CountryDTO countryDTO = null;
+		if (country != null) {
+			countryDTO = converter.convert(country, CountryDTO.class);
+		}else {
+			logger.error("Error CountryByName. Name: " + countryName + " not found!!!");
+			throw new NotFoundException("Country data not present!");
+		}
 		return countryDTO;
 	}
 

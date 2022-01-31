@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest
@@ -36,6 +37,14 @@ public class CountryControllerTest {
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 		.andDo(MockMvcResultHandlers.print());
 		
+	}
+	
+	@Test
+	public void testCountryByName() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/api/country/ambrogio"))
+		.andExpect(MockMvcResultMatchers.status().isNotFound())
+		.andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
+		.andDo(MockMvcResultHandlers.print());
 	}
 	
 }
