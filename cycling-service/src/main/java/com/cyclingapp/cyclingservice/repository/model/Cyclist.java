@@ -4,7 +4,6 @@ import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,31 +16,31 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "cyclists")
+@Table(name = "cyclist")
 public class Cyclist implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	
+
 	@Column(name = "first_name")
 	private String firstName;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@Column(name = "born")
-	@Temporal(TemporalType.DATE)
-	private Date born;
-	
-	@Column(name = "role")
-	private String role;
-	
+	private String born;
+
 	@ManyToOne(fetch = LAZY)
 	@JoinColumn(name = "country_id")
 	private Country country;
+
+	@ManyToOne(fetch = LAZY)
+	@JoinColumn(name = "team_id")
+	private Team team;
 
 	public Long getId() {
 		return id;
@@ -67,20 +66,12 @@ public class Cyclist implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public Date getBorn() {
+	public String getBorn() {
 		return born;
 	}
 
-	public void setBorn(Date born) {
+	public void setBorn(String born) {
 		this.born = born;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 
 	public Country getCountry() {
@@ -91,9 +82,18 @@ public class Cyclist implements Serializable {
 		this.country = country;
 	}
 
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
+
 	@Override
 	public String toString() {
 		return "Cyclist [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", born=" + born
-				+ ", role=" + role + ", country=" + country + "]";
+				+ ", country=" + country + ", team=" + team + "]";
 	}
+
 }

@@ -31,9 +31,12 @@ public class Country implements Serializable {
 
 	@Column(name = "country_name", nullable = false)
 	private String countryName;
-	
-	@OneToMany(fetch = LAZY, cascade = ALL)
+
+	@OneToMany(fetch = LAZY, cascade = ALL, mappedBy = "country")
 	private List<Cyclist> cyclists = new ArrayList<Cyclist>();
+
+	@OneToMany(fetch = LAZY, cascade = ALL, mappedBy = "country")
+	private List<Team> teams = new ArrayList<Team>();
 
 	public Long getId() {
 		return id;
@@ -59,9 +62,26 @@ public class Country implements Serializable {
 		this.countryName = countryName;
 	}
 
+	public List<Cyclist> getCyclists() {
+		return cyclists;
+	}
+
+	public void setCyclists(List<Cyclist> cyclists) {
+		this.cyclists = cyclists;
+	}
+
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
+
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", countryCode=" + countryCode + ", countryName=" + countryName + "]";
+		return "Country [id=" + id + ", countryCode=" + countryCode + ", countryName=" + countryName + ", cyclists="
+				+ cyclists + ", teams=" + teams + "]";
 	}
 
 }
