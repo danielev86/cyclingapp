@@ -36,7 +36,4 @@ public class DivisionControllerTest {
 		.andExpect(content().contentType(APPLICATION_JSON))
 		.andDo(MockMvcResultHandlers.print());
 	}
-	
-	
-
 }
